@@ -1,0 +1,17 @@
+apiVersion: operator.openshift.io/v1alpha1
+kind: ImageContentSourcePolicy
+metadata:
+  labels:
+    operators.openshift.org/catalog: "true"
+  name: ifbr-offline-mirrors
+spec:
+  repositoryDigestMirrors:
+  - mirrors:
+    - $TARGET_PATH
+    source: cp.icr.io/cp/fbr
+  - mirrors:
+    - $TARGET_PATH
+    source: docker.io/bitnami
+  - mirrors:
+    - $TARGET_PATH
+    source: icr.io/cpopen

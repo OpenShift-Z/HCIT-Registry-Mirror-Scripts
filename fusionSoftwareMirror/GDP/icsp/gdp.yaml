@@ -1,0 +1,13 @@
+apiVersion: operator.openshift.io/v1alpha1 
+kind: ImageContentSourcePolicy 
+metadata: 
+  name: isf-scale-gdp
+spec: 
+  repositoryDigestMirrors:
+  # for cnsa
+  - mirrors:
+    - $TARGET_PATH   
+    source: cp.icr.io/cp/spectrum/scale
+  - mirrors:
+    - $TARGET_PATH 
+    source: icr.io/cpopen

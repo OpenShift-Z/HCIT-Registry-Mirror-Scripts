@@ -1,0 +1,15 @@
+apiVersion: operator.openshift.io/v1alpha1 
+kind: ImageContentSourcePolicy 
+metadata: 
+  name: isf-fusion-icsp 
+spec: 
+  repositoryDigestMirrors:  
+  - mirrors:
+    - $TARGET_PATH 
+    source: cp.icr.io/cp/isf-sds 
+  - mirrors:
+    - $TARGET_PATH 
+    source: icr.io/cpopen 
+  - mirrors:
+    - $TARGET_PATH/openshift4
+    source: registry.redhat.io/openshift4

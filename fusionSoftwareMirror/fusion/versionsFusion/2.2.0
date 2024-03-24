@@ -1,0 +1,29 @@
+#!/bin/bash
+#
+# Copyright IBM Corporation 2023
+# Images to Mirror for Fusion Version 2.2
+
+skopeo copy --all docker://cp.icr.io/cp/isf/isf-operator-bundle@sha256:5deed6b4d85f810647ba77f3554b87a3fdfbe970c633add5670f42c7e7698d68 docker://$TARGET_PATH/isf-operator-bundle@sha256:5deed6b4d85f810647ba77f3554b87a3fdfbe970c633add5670f42c7e7698d68
+skopeo copy --all docker://cp.icr.io/cp/isf/isf-operator-index:2.2.1 docker://$TARGET_PATH/isf-operator-index:2.2.1
+skopeo copy --all docker://cp.icr.io/cp/isf/callhomeclient@sha256:4c0692809ba5b28c781f1826ec0e2ef6f4dc603fd4a9c2a4459dd6eaec34238d docker://$TARGET_PATH/callhomeclient@sha256:4c0692809ba5b28c781f1826ec0e2ef6f4dc603fd4a9c2a4459dd6eaec34238d
+skopeo copy --all docker://cp.icr.io/cp/isf/eventmanager@sha256:9fbf322770860e30bb8ba513dcc1d132af08dbe69d27f9e46a76a23c0e11c189 docker://$TARGET_PATH/eventmanager@sha256:9fbf322770860e30bb8ba513dcc1d132af08dbe69d27f9e46a76a23c0e11c189
+skopeo copy --all docker://cp.icr.io/cp/isf/eventmanager-snmp3@sha256:174f50dd7d9bf9b03ade0fb73f773eddd2eec850272b5868420a94ad4af1307e docker://$TARGET_PATH/eventmanager-snmp3@sha256:174f50dd7d9bf9b03ade0fb73f773eddd2eec850272b5868420a94ad4af1307e
+skopeo copy --all docker://cp.icr.io/cp/isf/fusion-ui-app@sha256:ed209329ed1d8c42c35306c3cda647e1795e27a13d61066dc218f0bbd7eec79b docker://$TARGET_PATH/fusion-ui-app@sha256:ed209329ed1d8c42c35306c3cda647e1795e27a13d61066dc218f0bbd7eec79b
+skopeo copy --all docker://cp.icr.io/cp/isf/isf-application-operator@sha256:5354f12547ea2b31c2933206001064822b6d3d77122a13d496392026f5e7ffbd docker://$TARGET_PATH/isf-application-operator@sha256:5354f12547ea2b31c2933206001064822b6d3d77122a13d496392026f5e7ffbd
+skopeo copy --all docker://cp.icr.io/cp/isf/isf-bkprstr-operator@sha256:cd2d7f6c538eac2907480876cd1fc7a49b0c4c2c7eb900bedca984f959543476 docker://$TARGET_PATH/isf-bkprstr-operator@sha256:cd2d7f6c538eac2907480876cd1fc7a49b0c4c2c7eb900bedca984f959543476
+skopeo copy --all docker://cp.icr.io/cp/isf/isf-compute-operator@sha256:3c2bd848400c3ef252b631168ce613b60fb69e511501f1f1b3cf0a1e983fb8bb docker://$TARGET_PATH/isf-compute-operator@sha256:3c2bd848400c3ef252b631168ce613b60fb69e511501f1f1b3cf0a1e983fb8bb
+skopeo copy --all docker://cp.icr.io/cp/isf/isf-data-protection-operator@sha256:32f7db9eddfc388fcb28e75509691b4613dc95e32a532b0a75a8ef0b9ddb9695 docker://$TARGET_PATH/isf-data-protection-operator@sha256:32f7db9eddfc388fcb28e75509691b4613dc95e32a532b0a75a8ef0b9ddb9695
+skopeo copy --all docker://cp.icr.io/cp/isf/isf-ics-operator@sha256:351f0b799f592e970ebf0b4ac9edc4996f6a7001f146bb92935578c2aab95ba7 docker://$TARGET_PATH/isf-ics-operator@sha256:351f0b799f592e970ebf0b4ac9edc4996f6a7001f146bb92935578c2aab95ba7
+skopeo copy --all docker://cp.icr.io/cp/isf/isf-installer-operator@sha256:dec465032918e277fcadb47f6fa3377bca5d2c9a4c3f01d4408ead8fe0626e50 docker://$TARGET_PATH/isf-installer-operator@sha256:dec465032918e277fcadb47f6fa3377bca5d2c9a4c3f01d4408ead8fe0626e50
+skopeo copy --all docker://cp.icr.io/cp/isf/isf-network-operator@sha256:372ba91bfb1106bd3150ac8092a5560865192b5358093ede6068025ff6e47b8b docker://$TARGET_PATH/isf-network-operator@sha256:372ba91bfb1106bd3150ac8092a5560865192b5358093ede6068025ff6e47b8b
+skopeo copy --all docker://cp.icr.io/cp/isf/isf-node-exporter@sha256:228d82f852fae7baa47355f4a5486bd66446ca17be800cabbebe5ab89560c982 docker://$TARGET_PATH/isf-node-exporter@sha256:228d82f852fae7baa47355f4a5486bd66446ca17be800cabbebe5ab89560c982
+skopeo copy --all docker://cp.icr.io/cp/isf/isf-proxy@sha256:51ba36200bc5ff3008a0b064dcf0abb6eec94e96b58e2e8e3109f73ae9738cbf docker://$TARGET_PATH/isf-proxy@sha256:51ba36200bc5ff3008a0b064dcf0abb6eec94e96b58e2e8e3109f73ae9738cbf
+skopeo copy --all docker://cp.icr.io/cp/isf/isf-serviceability-operator@sha256:fa9a516111bd37ee3d990ceccea16b1fc515e391e4402ce26ace4e31ef671d7d docker://$TARGET_PATH/isf-serviceability-operator@sha256:fa9a516111bd37ee3d990ceccea16b1fc515e391e4402ce26ace4e31ef671d7d
+skopeo copy --all docker://cp.icr.io/cp/isf/isf-snmp-exporter@sha256:da83eb625420ea8763f88df449d86f310702fca89c1827fef9ecf3198c4ee9c7 docker://$TARGET_PATH/isf-snmp-exporter@sha256:da83eb625420ea8763f88df449d86f310702fca89c1827fef9ecf3198c4ee9c7
+skopeo copy --all docker://cp.icr.io/cp/isf/isf-storage-operator@sha256:a905c52c49188bf24ef541ca3ef18e4e7ab54aff6dd357f8a2da6cc84bb2e51d docker://$TARGET_PATH/isf-storage-operator@sha256:a905c52c49188bf24ef541ca3ef18e4e7ab54aff6dd357f8a2da6cc84bb2e51d
+skopeo copy --all docker://cp.icr.io/cp/isf/isf-storage-services@sha256:4ae63b4a16ab2ebcf7336e149c4c925e57886f409f79026c4bb246da2ead7071 docker://$TARGET_PATH/isf-storage-services@sha256:4ae63b4a16ab2ebcf7336e149c4c925e57886f409f79026c4bb246da2ead7071
+skopeo copy --all docker://cp.icr.io/cp/isf/isf-ui-operator@sha256:2cff09369ef3ec62fb36d06c88396f78e2abf066604f13bcad525327f8bba096 docker://$TARGET_PATH/isf-ui-operator@sha256:2cff09369ef3ec62fb36d06c88396f78e2abf066604f13bcad525327f8bba096
+skopeo copy --all docker://cp.icr.io/cp/isf/isf-update-operator@sha256:5bb0da184ace263c1a1a7401138fb38e4d81b2a3389ebbc9422040e7e01a3fe3 docker://$TARGET_PATH/isf-update-operator@sha256:5bb0da184ace263c1a1a7401138fb38e4d81b2a3389ebbc9422040e7e01a3fe3
+skopeo copy --all docker://cp.icr.io/cp/isf/logcollector@sha256:9126d3cf6dc0ef6fdbb0a1c9f58490697f8470d6d1e02e23e24f1fd4078901ae docker://$TARGET_PATH/logcollector@sha256:9126d3cf6dc0ef6fdbb0a1c9f58490697f8470d6d1e02e23e24f1fd4078901ae
+skopeo copy --all docker://cp.icr.io/cp/isf/spp-dp-operator@sha256:4f5d863a367ece70382259b8c0998e96ae876d09e2bf6302c047bb4a9c972c50 docker://$TARGET_PATH/spp-dp-operator@sha256:4f5d863a367ece70382259b8c0998e96ae876d09e2bf6302c047bb4a9c972c50
+skopeo copy --all docker://registry.redhat.io/openshift4/ose-kube-rbac-proxy@sha256:c9d0a5a2871c24c0b1058e419f2b090429363a319856397855412fd2c0037395 docker://$TARGET_PATH/openshift4-ose-kube-rbac-proxy@sha256:c9d0a5a2871c24c0b1058e419f2b090429363a319856397855412fd2c0037395

@@ -1,0 +1,24 @@
+apiVersion: operator.openshift.io/v1alpha1
+kind: ImageContentSourcePolicy
+metadata:
+  labels:
+    operators.openshift.org/catalog: "true"
+  name: isd-mirrors
+spec:
+  repositoryDigestMirrors:
+  - mirrors:
+    - $TARGET_PATH
+    source: icr.io/cpopen
+  - mirrors:
+    - $TARGET_PATH
+    source: registry.redhat.io/redhat
+  - mirrors:
+    - $TARGET_PATH/amq
+    - $TARGET_PATH
+    source: registry.redhat.io/amq7
+  - mirrors:
+    - $TARGET_PATH/ibm-spectrum-discover
+    source: cp.icr.io/cp/ibm-spectrum-discover
+  - mirrors:
+    - $TARGET_PATH/db2u
+    source: icr.io/db2u
