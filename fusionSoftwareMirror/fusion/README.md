@@ -2,9 +2,10 @@
 
 The `fusion.sh` script will handle mirroring the required software to deploy IBM Storage Fusion. The script will also generate the necessary CatalogSource and ImageContentSourcePolicy (ICSP) files required to install Storage Fusion via OperatorHub in OpenShift.
 
- For further IBM Storage Fusion mirror details please review the official [IBM Storage Fusion Mirror Documentation](https://www.ibm.com/docs/en/storage-fusion/2.6?topic=registry-mirroring-storage-fusion-images).
+ For further IBM Storage Fusion mirror details please review the official [IBM Storage Fusion Mirror Documentation](https://www.ibm.com/docs/en/fusion-software/2.8.x?topic=registry-mirroring-storage-fusion-images).
 
 - **Note:** All Fusion images used in this mirror automation have been pulled from the IBM Storage Fusion Mirror website.
+- **Note:** As of Fusion 2.9, the official method for mirroring Fusion images has switched from the manual skopeo process that is automated here, to a process that relies on the oc-mirror and `oc ibm-pak` plugins. For updated 2.9 mirror documentation see [here](https://www.ibm.com/docs/en/storage-fusion-software/2.9.x?topic=images-mirroring-fusion).
 
 ## **Prerequisites**
 

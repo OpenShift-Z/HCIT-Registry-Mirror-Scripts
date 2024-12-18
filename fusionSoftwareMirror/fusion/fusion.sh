@@ -22,11 +22,8 @@ echo "Fusion Mirror Completed"
 cp templates/icsps/fusion.yaml $POLICY_FILE
 # Replace Registry in ICSP file
 sed -i "s+\$TARGET_PATH+$TARGET_PATH+g" $POLICY_FILE
-# Create the Registry API to capture the version of fusion we are using
-PORT=$(echo $TARGET_PATH | awk 'match($0,/:([0-9]+)/) { print substr($0,RSTART,RLENGTH) }')
-REGAPI="${TARGET_PATH/${PORT}/${PORT}'/v2'}"
-# Curl down the version of fusion
-readarray -t fusionVersionArray < <(curl -s --user "$REGUSER:$REGPASS" https://$REGAPI/isf-operator-software-catalog/tags/list | jq .tags[] | tr -d '"')
+# use skopeo to make sure our target tag exists in the registry
+readarray -t fusionVersionArray < <(skopeo list-tags docker://$TARGET_PATH/isf-operator-software-catalog | jq .Tags[] | tr -d '"')
 # Check if Fusion Version has been Mirrored
 for version in "${fusionVersionArray[@]}"
 do
@@ -36,7 +33,7 @@ do
 done
 # Verify Fusion Version
 if [ -z ${fusionVersion+x} ]; then
-  echo ERROR: Fusion Version $FUSION_VERSION was not found at https://$REGAPI/isf-operator-software-catalog/tags/list
+  echo ERROR: Fusion Version $FUSION_VERSION was not found at docker://$TARGET_PATH/isf-operator-software-catalog/tags/list
   exit 1
 fi
 # Copy template Fusion ICSP file
